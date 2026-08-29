@@ -2,7 +2,7 @@
 
 **FitLang** es un lenguaje de dominio específico (DSL) diseñado para describir rutinas de entrenamiento de forma simple, estructurada y legible. Permite crear rutinas, definir ejercicios, series, repeticiones, peso, descanso, objetivos, y tomar decisiones automáticas sobre el rendimiento del usuario.
 
-## ¿Qué puede hacer FitLang?
+## Qué puede hacer FitLang
 
 - Crear rutinas de entrenamiento.
 - Agregar ejercicios a una rutina.
@@ -20,6 +20,17 @@
 | Entero    | `4`, `12`, `90`        |
 | Número    | `40`, `40.5`           |
 | Booleano  | `verdadero`, `falso`   |
+
+## Cobertura de condiciones
+
+El lenguaje procesa distintos tipos de condiciones. Se distribuyen así entre las 15 reglas:
+
+| Requisito | Reglas que lo cubren |
+|---|---|
+| Condición simple (una sola evaluación, sin `y`/`o`) | 8, 9, 14 |
+| Condición compuesta (`y` / `o`) | 10, 11, 12, 13 |
+| Combinación numérico + booleano | 10, 12 |
+| Combinación texto + booleano | 13 |
 
 ## Reglas del lenguaje
 
@@ -68,7 +79,7 @@ si peso > 50 {
 }
 ```
 
-### 9. Condicional compuesta
+### 9. Condicional simple con alternativa (si / sino)
 ```
 si repeticiones >= 12 {
     aumentar_peso 5
@@ -76,6 +87,7 @@ si repeticiones >= 12 {
     mantener_peso
 }
 ```
+Evalúa una sola condición (`repeticiones >= 12`), solo que define qué hacer también cuando no se cumple.
 
 ### 10. Operador lógico `y` (AND)
 ```
@@ -83,6 +95,7 @@ si repeticiones >= 12 y activo == verdadero {
     aumentar_peso 5
 }
 ```
+Condición compuesta. Combina numérico (`repeticiones`) con booleano (`activo`).
 
 ### 11. Operador lógico `o` (OR)
 ```
@@ -90,6 +103,7 @@ si peso > 50 o repeticiones > 15 {
     reducir_peso 5
 }
 ```
+Condición compuesta.
 
 ### 12. Combinar número + booleano
 ```
@@ -97,6 +111,7 @@ si peso > 30 y activo == verdadero {
     aumentar_peso 5
 }
 ```
+Condición compuesta. Combina numérico (`peso`) con booleano (`activo`).
 
 ### 13. Combinar texto + booleano
 ```
@@ -104,6 +119,7 @@ si objetivo == "fuerza" y activo == verdadero {
     aumentar_peso 5
 }
 ```
+Condición compuesta. Combina texto (`objetivo`) con booleano (`activo`).
 
 ### 14. Definir el objetivo
 ```
@@ -112,7 +128,7 @@ objetivo "hipertrofia"
 objetivo "resistencia"
 ```
 
-También puede usarse en condiciones:
+También puede usarse en una condición simple:
 ```
 si objetivo == "hipertrofia" {
     aumentar_peso 2
@@ -122,7 +138,7 @@ si objetivo == "hipertrofia" {
 ### 15. Detección de errores de tipo
 ```
 series "muchas"   ERROR: series debe ser un número entero.
-series 4          
+series 4          correcto
 ```
 
 ## Ejemplo completo
@@ -146,4 +162,6 @@ rutina "Pierna" {
     }
 }
 ```
+## Licencia
 
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
