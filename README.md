@@ -164,4 +164,4 @@ rutina "Pierna" {
 ```
 ## Licencia
 
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la licencia del grupo 9. Consulta el archivo `LICENSE` para más detalles.
