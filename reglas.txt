@@ -1,0 +1,33 @@
+FitLang - Reglas del sistema (lenguaje natural)
+Grupo 9
+
+--- Reglas con una sola condición (mínimo 3 requeridas) ---
+
+1. SI el peso es mayor a 50 ENTONCES disminuir el peso.
+2. SI las repeticiones son mayores o iguales a 12 ENTONCES aumentar el peso.
+3. SI el ejercicio no está activo ENTONCES pausar la rutina.
+4. SI el descanso es menor a 30 segundos ENTONCES aumentar el descanso.
+5. SI el objetivo es "resistencia" ENTONCES aumentar las repeticiones sugeridas.
+
+--- Reglas con condiciones compuestas usando Y u O (mínimo 3 requeridas) ---
+
+6. SI las repeticiones son mayores o iguales a 12 Y el ejercicio está activo ENTONCES aumentar el peso.
+7. SI el peso es mayor a 50 O las repeticiones son mayores a 15 ENTONCES reducir el peso.
+8. SI las series son menores a 3 O las repeticiones son menores a 8 ENTONCES aumentar las series.
+9. SI el descanso es mayor a 120 Y las series son mayores a 4 ENTONCES reducir el descanso.
+10. SI el objetivo es "fuerza" Y el ejercicio está activo ENTONCES aumentar el peso.
+
+--- Reglas que combinan diferentes tipos de datos (mínimo 2 requeridas) ---
+
+11. SI el peso es mayor a 30 Y el ejercicio está activo ENTONCES aumentar el peso.
+    (combina numérico [peso] con booleano [activo])
+12. SI el objetivo es "fuerza" Y el ejercicio está activo ENTONCES aumentar el peso.
+    (combina texto [objetivo] con booleano [activo])
+13. SI el ejercicio está activo Y el peso es igual a 0 ENTONCES marcar la rutina como error.
+    (combina booleano [activo] con numérico [peso])
+
+--- Reglas adicionales ---
+
+14. SI el objetivo es "hipertrofia" ENTONCES mantener las repeticiones entre 8 y 12.
+15. SI las series son iguales a 4 Y el objetivo es "hipertrofia" ENTONCES mantener el peso actual.
+    (combina numérico [series] con texto [objetivo])
