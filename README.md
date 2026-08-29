@@ -30,16 +30,16 @@
 
 ## Tabla de clasificación de variables
 
-| Variable | Tipo Java | Ejemplo |
+| Variable | Tipo Python | Ejemplo |
 |---|---|---|
-| `rutina` | `String` | `"Pierna"` |
-| `ejercicio` | `String` | `"Sentadilla"` |
+| `rutina` | `str` | `"Pierna"` |
+| `ejercicio` | `str` | `"Sentadilla"` |
 | `series` | `int` | `4` |
 | `repeticiones` | `int` | `12` |
-| `peso` | `double` | `40.0` |
+| `peso` | `float` | `40.0` |
 | `descanso` | `int` | `90` |
-| `activo` | `boolean` | `true` |
-| `objetivo` | `String` | `"fuerza"` |
+| `activo` | `bool` | `True` |
+| `objetivo` | `str` | `"fuerza"` |
 
 ## Las 15 reglas
 
